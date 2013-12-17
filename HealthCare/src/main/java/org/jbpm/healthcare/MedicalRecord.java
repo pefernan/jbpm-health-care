@@ -10,15 +10,19 @@ static final long serialVersionUID = 1L;
     @org.kie.api.definition.type.Position(value = 1)
     private java.util.List<org.jbpm.healthcare.MedicalEntry> entries;
     
+    @org.kie.api.definition.type.Position(value = 2)
+    private java.util.Date followUpAppointment;
+    
     @org.kie.api.definition.type.Position(value = 0)
     private org.jbpm.healthcare.Patient patient;
 
     public MedicalRecord() {
     }
 
-    public MedicalRecord(org.jbpm.healthcare.Patient patient, java.util.List<org.jbpm.healthcare.MedicalEntry> entries) {
+    public MedicalRecord(org.jbpm.healthcare.Patient patient, java.util.List<org.jbpm.healthcare.MedicalEntry> entries, java.util.Date followUpAppointment) {
         this.patient = patient;
         this.entries = entries;
+        this.followUpAppointment = followUpAppointment;
     }
 
 
@@ -29,6 +33,14 @@ static final long serialVersionUID = 1L;
 
     public void setEntries(  java.util.List<org.jbpm.healthcare.MedicalEntry> entries ) {
         this.entries = entries;
+    }
+    
+    public java.util.Date getFollowUpAppointment() {
+        return this.followUpAppointment;
+    }
+
+    public void setFollowUpAppointment(  java.util.Date followUpAppointment ) {
+        this.followUpAppointment = followUpAppointment;
     }
     
     public org.jbpm.healthcare.Patient getPatient() {
