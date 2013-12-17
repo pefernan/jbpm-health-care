@@ -48,24 +48,17 @@
 	function taskFormValidator() {
 		var i=0;
 		var myInputs = new Array();
-					myInputs[i] = document.getElementById("derive");
-					i++;
-					myInputs[i] = document.getElementById("appointment_date");
+					myInputs[i] = document.getElementById("out_record");
 					i++;
 
 
 		var j=0;
 						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
-							alert("Please enter valid derive");
+							alert("Please enter valid out_record");
 							myInputs[j].focus();
 							return false;
 						}
-					j++;
-						if(notEmpty(myInputs[j]) && !isAlphanumeric(myInputs[j])) {
-							alert("Please enter valid appointment_date");
-							myInputs[j].focus();
-							return false;
-						}
+			
 					j++;
 
 		return true;
@@ -218,20 +211,44 @@
 </style>
 <div id="container">
 	<div id="header">
-		New Process Instance: /HealthCare/src/main/resources/org/jbpm/healthcare.PatientCheckup
+		User Task Form: PatientCheckup.GPFollowUP
 	</div>
 	<div id="content">
-	    <input type="hidden" name="processId" value="${process.id}"/>
+	    <input type="hidden" name="taskId" value="${task.id}"/>
 		<fieldset>
-            <legend>Process inputs</legend>
-                            		<label for="name">derive</label>
-                            		<div class="div_texbox">
-                              		<input name="derive" type="text" class="textbox" id="derive" value="" />
+            <legend>Task Info</legend>
+            	<label for="name">Owners</label>
+            	<div class="div_checkbox">
+            	
+            	</div>
+            	<label for="name">Actor ID</label>
+            	<div class="div_checkbox"></div>
+            	<label for="name">Group</label>
+            	<div class="div_checkbox">GP</div>
+            	<label for="name">Skippable</label>
+            	<div class="div_checkbox"></div>
+            	<label for="name">Priority</label>
+            	<div class="div_checkbox"></div>
+            	<label for="name">Comment</label>
+            	<div class="div_checkbox"></div>
+            <div class="clear"></div>
+          </fieldset>
+
+		<fieldset>
+            <legend>Task Inputs</legend>
+                            		<label for="name">in_record</label>
+                            		<div class="div_checkbox">
+                              		${in_record}
                             		</div>
-              	
-                            		<label for="name">appointment_date</label>
+
+            <div class="clear"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Task Outputs</legend>
+                            		<label for="name">out_record</label>
                             		<div class="div_texbox">
-                              		<input name="appointment_date" type="text" class="textbox" id="appointment_date" value="" />
+                              		<input name="out_record" type="text" class="textbox" id="out_record" value="" />
                             		</div>
               	
 

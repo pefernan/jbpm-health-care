@@ -3,6 +3,14 @@ import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
 
 [
   [
+    "name" : "ScheduleAppointment",
+    "parameters" : [
+      "DueDate" : new StringDataType(),
+    ],
+    "displayName" : "ScheduleAppointment",
+    "icon" : "defaultemailicon.gif"
+  ],
+ [
     "name" : "Email",
     "parameters" : [
       "From" : new StringDataType(),
@@ -13,7 +21,6 @@ import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
     "displayName" : "Email",
     "icon" : "defaultemailicon.gif"
   ],
-
   [
     "name" : "Log",
     "parameters" : [
